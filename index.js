@@ -47,6 +47,30 @@ button.addEventListener("click", function(){
        
 }}
 )
+const formP = document.getElementById("sent-msg")
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    try {
+      await emailjs.send(
+        'service_3dndev6', // Add your EmailJS service ID
+        'template_ezz9wbb', // Add your EmailJS template ID
+        {
+          from_name: document.getElementById('name').value,
+          from_email: document.getElementById('email').value,
+          message: document.getElementById('message').value,
+        }
+      );
+  
+      formP.innerHTML = "Message Sent. Thanks for your feedback."
+     // e.target.reset();
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again.');
+    }
+  });
+
+
 
 
 
