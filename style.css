@@ -245,6 +245,9 @@ section h2 {
 }
 
 /* Contact Section */
+.contact-content{
+    text-align: center;
+}
 .social-links{
     display: flex;
     justify-content: center;
